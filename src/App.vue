@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    my-vuex
+     <p>{{this.$store.state.counter}}</p>
+     <p>{{this.$store.getters.doubleCounter}}</p>
+     <button @click="add()">增加</button>
   </div>
 </template>
 
@@ -8,7 +10,16 @@
 
 export default {
   name: 'App',
- 
+  data(){
+    return {
+
+    }
+  },
+  methods:{
+    add(){
+      this.$store.dispatch('add')
+    }
+  }
 }
 </script>
 
